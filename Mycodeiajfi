@@ -1,0 +1,9 @@
+let name = prompt("Please enter your name:");
+
+if (name === "Kaleb","brooke") {
+  alert("Access granted. Welcome, " + name + "!");
+  // continue with the rest of your code here
+} else {
+  alert("Access denied. Your name is not recognized.");
+  // handle the case where the user's name is not recognized here
+}
