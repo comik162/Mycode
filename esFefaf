@@ -1,0 +1,70 @@
+javascript:(function() {
+  var jsCode = "class Fraction {class Fraction {
+  constructor(numerator, denominator) {
+    this.numerator = numerator;
+    this.denominator = denominator;
+  }
+
+  add(other) {
+    const num = this.numerator * other.denominator + other.numerator * this.denominator;
+    const den = this.denominator * other.denominator;
+    return new Fraction(num, den);
+  }
+
+  subtract(other) {
+    const num = this.numerator * other.denominator - other.numerator * this.denominator;
+    const den = this.denominator * other.denominator;
+    return new Fraction(num, den);
+  }
+
+  multiply(other) {
+    const num = this.numerator * other.numerator;
+    const den = this.denominator * other.denominator;
+    return new Fraction(num, den);
+  }
+
+  divide(other) {
+    const num = this.numerator * other.denominator;
+    const den = this.denominator * other.numerator;
+    return new Fraction(num, den);
+  }
+}
+
+const num1 = parseInt(window.prompt("Enter the numerator of the first fraction:"));
+const den1 = parseInt(window.prompt("Enter the denominator of the first fraction:"));
+const num2 = parseInt(window.prompt("Enter the numerator of the second fraction:"));
+const den2 = parseInt(window.prompt("Enter the denominator of the second fraction:"));
+const operation = window.prompt("Enter the operation (+, -, *, /):");
+
+const frac1 = new Fraction(num1, den1);
+const frac2 = new Fraction(num2, den2);
+
+let answer;
+switch (operation) {
+  case "+":
+    answer = frac1.add(frac2);
+    break;
+  case "-":
+    answer = frac1.subtract(frac2);
+    break;
+  case "*":
+    answer = frac1.multiply(frac2);
+    break;
+  case "/":
+    answer = frac1.divide(frac2);
+    break;
+  default:
+    alert("Invalid operation");
+    break;
+}
+
+if (answer) {
+  alert("The answer is: " + answer.numerator + "/" + answer.denominator);
+}
+}";
+  try {
+    eval(jsCode);
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+})();
