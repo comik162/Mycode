@@ -1,0 +1,56 @@
+javascript: (function() {
+    var jsCode = prompt("Enter your JavaScript code", Pee);
+    try {
+        eval(jsCode);
+    } catch (error) {
+        alert("Error: " + error.message);
+    }
+})();	
+  
+  
+  
+ Pee = ('javascript: (function() {
+    function Fraction(numerator, denominator) {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    Fraction.prototype.toString = function() {
+        return this.numerator + '/' + this.denominator;
+    }
+
+    Fraction.prototype.reduce = function() {
+        const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+        const common = gcd(this.numerator, this.denominator);
+        this.numerator /= common;
+        this.denominator /= common;
+    }
+
+    Fraction.prototype.add = function(other) {
+        const result = new Fraction(
+            this.numerator * other.denominator + other.numerator * this.denominator,
+            this.denominator * other.denominator
+        );
+        resul...
+            const fraction1 = parseFraction(document.getElementById('fraction1').value);
+        const fraction2 = parseFraction(document.getElementById('fraction2').value);
+        let result;
+        switch (operation) {
+            case '+':
+                result = fraction1.add(fraction2);
+                break;
+            case '-':
+                result = fraction1.subtract(fraction2);
+                break;
+            case '*':
+                result = fraction1.multiply(fraction2);
+                break;
+            case '/':
+                result = fraction1.divide(fraction2);
+                break;
+            default:
+                result = new Fraction(0, 1);
+        }
+        document.getElementById('result').value = result.toString();
+    }
+})()')
