@@ -1,15 +1,4 @@
 javascript: (function() {
-    var jsCode = prompt("Enter your JavaScript code", Pee);
-    try {
-        eval(jsCode);
-    } catch (error) {
-        alert("Error: " + error.message);
-    }
-})();	
-  
-  
-  
- Pee = ('javascript: (function() {
     function Fraction(numerator, denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
@@ -53,4 +42,4 @@ javascript: (function() {
         }
         document.getElementById('result').value = result.toString();
     }
-})()')
+})()
